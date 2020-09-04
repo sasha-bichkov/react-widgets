@@ -21,6 +21,7 @@ storiesOf('Multiselect', module)
     <Container>
       <Multiselect
         {...props}
+        name="testName"
         customref={customref}
         placeholder="Hello there"
         defaultValue={props.data.slice(0, 2)}

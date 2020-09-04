@@ -129,6 +129,9 @@ let propTypes = {
   ]),
 
   isRtl: PropTypes.bool,
+
+  name: PropTypes.string,
+
   messages: PropTypes.shape({
     open: CustomPropTypes.message,
     emptyList: CustomPropTypes.message,
@@ -550,7 +553,8 @@ class Multiselect extends React.Component {
       busySpinner,
       containerClassName,
       popupTransition,
-      customref
+      customref,
+      name
     } = this.props
 
     let { focused, focusedItem, dataItems, messages } = this.state
@@ -592,7 +596,14 @@ class Multiselect extends React.Component {
           className={cn(containerClassName, 'rw-widget-input')}
         >
           <div>
-            <input type="text" ref={customref} value={value} onChange={() => {}} style={{ display: 'none' }} />
+            <input
+              type="text"
+              name={name}
+              ref={customref}
+              value={value}
+              onChange={() => {}}
+              style={{ display: 'none' }}
+            />
 
             {shouldRenderTags && this.renderTags(messages)}
             {this.renderInput(inputOwns)}

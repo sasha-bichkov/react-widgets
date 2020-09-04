@@ -1,11 +1,11 @@
 {
-  "name": "react-widgets",
-  "version": "4.5.0",
-  "description": "An à la carte set of polished, extensible, and accessible inputs built for React",
+  "name": "react-widgetsfork",
+  "version": "4.5.2",
+  "description": "React-widgets",
   "main": "lib/index.js",
   "author": {
-    "name": "Jason",
-    "email": "monastic.panic@gmail.com"
+    "name": "Alexander",
+    "email": "aleksandar.bichkov@gmail.com"
   },
   "files": [
     "lib",
@@ -48,11 +48,11 @@
     "build": "npm run build:lib && npm run build:dist",
     "prepublishOnly": "npm run build"
   },
-  "homepage": "https://jquense.github.io/react-widgets/",
+  "homepage": "https://github.com/sasha-bichkov/react-widgets/",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jquense/react-widgets"
+    "url": "https://github.com/sasha-bichkov/react-widgets"
   },
   "peerDependencies": {
     "react": ">=0.14.0",
