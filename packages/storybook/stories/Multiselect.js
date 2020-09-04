@@ -14,11 +14,14 @@ let props = {
   onChange: action('change'),
 }
 
+const customref = React.createRef()
+
 storiesOf('Multiselect', module)
   .add('Multiselect', () => (
     <Container>
       <Multiselect
         {...props}
+        customref={customref}
         placeholder="Hello there"
         defaultValue={props.data.slice(0, 2)}
       />

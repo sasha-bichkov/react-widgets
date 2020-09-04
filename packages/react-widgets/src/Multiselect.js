@@ -123,6 +123,11 @@ let propTypes = {
   disabled: CustomPropTypes.disabled.acceptsArray,
   readOnly: CustomPropTypes.disabled,
 
+  customref: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.shape({ current: PropTypes.instanceOf(Element) })
+  ]),
+
   isRtl: PropTypes.bool,
   messages: PropTypes.shape({
     open: CustomPropTypes.message,
@@ -399,7 +404,7 @@ class Multiselect extends React.Component {
       busy,
       autoFocus,
       inputProps,
-      open,
+      open
     } = this.props
 
     let { focusedItem, focusedTag } = this.state
@@ -545,6 +550,7 @@ class Multiselect extends React.Component {
       busySpinner,
       containerClassName,
       popupTransition,
+      customref
     } = this.props
 
     let { focused, focusedItem, dataItems, messages } = this.state
@@ -562,6 +568,8 @@ class Multiselect extends React.Component {
 
     let disabled = this.props.disabled === true
     let readOnly = this.props.readOnly === true
+
+    const value = dataItems.length
 
     return (
       <Widget
@@ -584,6 +592,8 @@ class Multiselect extends React.Component {
           className={cn(containerClassName, 'rw-widget-input')}
         >
           <div>
+            <input type="text" ref={customref} value={value} onChange={() => {}} style={{ display: 'none' }} />
+
             {shouldRenderTags && this.renderTags(messages)}
             {this.renderInput(inputOwns)}
           </div>
