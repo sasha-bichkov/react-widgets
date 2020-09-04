@@ -14,11 +14,12 @@ let props = {
 }
 
 const states = ['NJ', 'NY']
+const customref = React.createRef()
 
 storiesOf('DropdownList', module)
   .add('DropdownList', () => (
     <Container>
-      <DropdownList {...props} filter="contains" />
+      <DropdownList {...props} customref={customref} filter="contains" />
     </Container>
   ))
   .add('open', () => (

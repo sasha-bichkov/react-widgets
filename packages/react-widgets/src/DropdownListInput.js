@@ -16,7 +16,12 @@ class DropdownListInput extends React.Component {
     valueComponent: CustomPropTypes.elementType,
     onAutofill: PropTypes.func.isRequired,
     onAutofillChange: PropTypes.func.isRequired,
+    customref: PropTypes.oneOfType([
+      PropTypes.func,
+      PropTypes.shape({ current: PropTypes.instanceOf(Element) })
+    ])
   }
+
   state = {
     autofilling: false,
   }
@@ -37,6 +42,7 @@ class DropdownListInput extends React.Component {
     this.setState({ autofilling: false })
     this.props.onAutofillChange(e)
   }
+
   render() {
     let {
       name,
@@ -44,6 +50,7 @@ class DropdownListInput extends React.Component {
       value,
       textField,
       autoComplete,
+      customref,
       valueComponent: Component,
     } = this.props
     const { autofilling } = this.state
@@ -59,10 +66,13 @@ class DropdownListInput extends React.Component {
         )
     }
     let val = dataValue(value, textField)
+
     return (
       <div className="rw-input rw-dropdown-list-input">
         {autoComplete !== 'off' && (
           <input
+            type="text"
+            ref={customref}
             tabIndex="-1"
             name={name}
             value={val == null ? '' : val}

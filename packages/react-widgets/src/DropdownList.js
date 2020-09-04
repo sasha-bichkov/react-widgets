@@ -126,6 +126,11 @@ class DropdownList extends React.Component {
     inputProps: PropTypes.object,
     listProps: PropTypes.object,
 
+    customref: PropTypes.oneOfType([
+      PropTypes.func,
+      PropTypes.shape({ current: PropTypes.instanceOf(Element) })
+    ]),
+
     isRtl: PropTypes.bool,
     messages: PropTypes.shape({
       open: PropTypes.string,
@@ -467,6 +472,7 @@ class DropdownList extends React.Component {
       inputProps,
       selectIcon,
       busySpinner,
+      customref,
       containerClassName,
       valueComponent,
     } = this.props
@@ -517,6 +523,7 @@ class DropdownList extends React.Component {
           <DropdownListInput
             {...inputProps}
             value={valueItem}
+            customref={customref}
             textField={textField}
             name={this.props.name}
             autoComplete={this.props.autoComplete}
