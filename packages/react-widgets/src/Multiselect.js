@@ -573,7 +573,7 @@ class Multiselect extends React.Component {
     let disabled = this.props.disabled === true
     let readOnly = this.props.readOnly === true
 
-    const value = dataItems.length
+    const value = JSON.stringify(dataItems)
 
     return (
       <Widget
