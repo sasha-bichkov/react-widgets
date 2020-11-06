@@ -575,8 +575,18 @@ class Multiselect extends React.Component {
 
     const value = JSON.stringify(dataItems)
     if (!value.length) {
+      console.log('ASSIGN NULL')
+      console.log('ASSIGN NULL')
+      console.log('ASSIGN NULL')
       value = null
+      console.log('ASSIGN NULL')
+      console.log('ASSIGN NULL')
+      console.log('ASSIGN NULL')
     }
+
+    console.log(value)
+    console.log(value)
+    console.log(value)
 
     return (
       <Widget
