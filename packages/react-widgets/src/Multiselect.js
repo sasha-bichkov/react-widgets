@@ -574,6 +574,12 @@ class Multiselect extends React.Component {
     let readOnly = this.props.readOnly === true
 
     const value = JSON.stringify(dataItems)
+    console.log(value)
+    console.log(value)
+    console.log(value)
+    console.log(value)
+    console.log(value)
+    console.log(value)
 
     return (
       <Widget
