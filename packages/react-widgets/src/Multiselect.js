@@ -575,7 +575,7 @@ class Multiselect extends React.Component {
 
     let value = JSON.stringify(dataItems)
     if (!dataItems.length) {
-      value = null
+      value = ''
     }
 
     return (
