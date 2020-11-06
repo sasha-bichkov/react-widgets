@@ -574,7 +574,7 @@ class Multiselect extends React.Component {
     let readOnly = this.props.readOnly === true
 
     const value = JSON.stringify(dataItems)
-    if (!value.length) {
+    if (!dataItems.length) {
       console.log('ASSIGN NULL')
       console.log('ASSIGN NULL')
       console.log('ASSIGN NULL')
